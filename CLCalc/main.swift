@@ -49,9 +49,20 @@ enum Operator: String {
     }
 }
 
-enum ProblemItems: Equatable {
+enum ProblemItems: Equatable, CustomStringConvertible {
     case Number(Double)
     case Op(Operator)
+    
+    var description: String {
+        get {
+            switch self {
+            case Number(let n):
+                return "`\(n)`"
+            case Op(let o):
+                return "`\(o.rawValue)`"
+            }
+        }
+    }
 }
 
 func ==(lhs: ProblemItems, rhs: ProblemItems) -> Bool {
@@ -86,18 +97,22 @@ class UserInputObject {
         
         var operations = [Operator]()
         
+        var lastWasOperator = true //true so that first item is not caught
         let inptArray = originalInput.characters.split { char in
             for e in iterateEnum(Operator) {
-                if e.rawValue == String(char) {
+                if e.rawValue == String(char) && !lastWasOperator {
                     operations.append(e)
+                    lastWasOperator = true
                     return true
                 }
             }
+            lastWasOperator = false
             return false
             }.map(String.init)
         
         for (i, n) in inptArray.enumerate() {
             guard let number = Double(n) else {
+                print("! Unexpected number: \(n)")
                 return nil
             }
             
@@ -121,6 +136,7 @@ class UserInputObject {
         if input.count == 1 {
             switch input[0] {
             case .Number(let n):
+                print("Reached single-number, \(n)")
                 return n
             case .Op(_):
                 print("A critical error occured, the input was an operator")
@@ -128,23 +144,23 @@ class UserInputObject {
             }
         }
         
-        var firstPrimary: Int? = nil
-        var firstSecondary: Int? = nil
+        var lastPrimary: Int? = nil
+        var lastSecondary: Int? = nil
         
         for (i,item) in input.enumerate() {
             switch item {
             case .Number(_):
                 continue
             case .Op(let oper):
-                if firstPrimary == nil && (oper == .Multiply || oper == .Divide) {
-                    firstPrimary = i
-                } else if firstSecondary == nil && (oper == . Add || oper == .Subtract) {
-                    firstSecondary = i
+                if (oper == .Multiply || oper == .Divide) {
+                    lastPrimary = i
+                } else if (oper == . Add || oper == .Subtract) {
+                    lastSecondary = i
                 }
             }
         }
         
-        guard let evalAround = firstSecondary ?? firstPrimary else {
+        guard let evalAround = lastSecondary ?? lastPrimary else {
             print("A critical error occurred finding the evalulation point (no operators most likely issue)")
             return 0
         }
@@ -164,6 +180,8 @@ class UserInputObject {
 
         let res = finalOper.eval(left, right)
         
+        print("Calculated \(res) from \(left) and \(right) from \(input) around \(evalAround)")
+        
         return res
     }
 }
@@ -180,6 +198,6 @@ while true {
         continue
     }
     
-    print(uip.rawItems)
+//    print(uip.rawItems)
     print(uip.eval())
 }

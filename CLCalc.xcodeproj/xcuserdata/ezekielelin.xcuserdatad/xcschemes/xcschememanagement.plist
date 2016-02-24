@@ -9,9 +9,24 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>CLTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>662823BC1C7D3BF100929334</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>662823C81C7D3CB200929334</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>66F165441C7BAEC00046F83B</key>
 		<dict>
 			<key>primary</key>

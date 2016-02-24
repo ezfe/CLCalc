@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		662823CC1C7D3CB200929334 /* CLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662823CB1C7D3CB200929334 /* CLTests.swift */; };
+		662823D11C7D3D0400929334 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F165481C7BAEC00046F83B /* main.swift */; };
 		66F165491C7BAEC00046F83B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F165481C7BAEC00046F83B /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,11 +25,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		662823C91C7D3CB200929334 /* CLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		662823CB1C7D3CB200929334 /* CLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLTests.swift; sourceTree = "<group>"; };
+		662823CD1C7D3CB200929334 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66F165451C7BAEC00046F83B /* CLCalc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CLCalc; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F165481C7BAEC00046F83B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		662823C61C7D3CB200929334 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		66F165421C7BAEC00046F83B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -38,10 +50,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		662823CA1C7D3CB200929334 /* CLTests */ = {
+			isa = PBXGroup;
+			children = (
+				662823CB1C7D3CB200929334 /* CLTests.swift */,
+				662823CD1C7D3CB200929334 /* Info.plist */,
+			);
+			path = CLTests;
+			sourceTree = "<group>";
+		};
 		66F1653C1C7BAEC00046F83B = {
 			isa = PBXGroup;
 			children = (
 				66F165471C7BAEC00046F83B /* CLCalc */,
+				662823CA1C7D3CB200929334 /* CLTests */,
 				66F165461C7BAEC00046F83B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				66F165451C7BAEC00046F83B /* CLCalc */,
+				662823C91C7D3CB200929334 /* CLTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,6 +88,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		662823C81C7D3CB200929334 /* CLTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 662823CE1C7D3CB200929334 /* Build configuration list for PBXNativeTarget "CLTests" */;
+			buildPhases = (
+				662823C51C7D3CB200929334 /* Sources */,
+				662823C61C7D3CB200929334 /* Frameworks */,
+				662823C71C7D3CB200929334 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CLTests;
+			productName = CLTests;
+			productReference = 662823C91C7D3CB200929334 /* CLTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		66F165441C7BAEC00046F83B /* CLCalc */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 66F1654C1C7BAEC00046F83B /* Build configuration list for PBXNativeTarget "CLCalc" */;
@@ -92,6 +132,9 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Ezekiel Elin";
 				TargetAttributes = {
+					662823C81C7D3CB200929334 = {
+						CreatedOnToolsVersion = 7.3;
+					};
 					66F165441C7BAEC00046F83B = {
 						CreatedOnToolsVersion = 7.3;
 					};
@@ -110,11 +153,31 @@
 			projectRoot = "";
 			targets = (
 				66F165441C7BAEC00046F83B /* CLCalc */,
+				662823C81C7D3CB200929334 /* CLTests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		662823C71C7D3CB200929334 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		662823C51C7D3CB200929334 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				662823D11C7D3D0400929334 /* main.swift in Sources */,
+				662823CC1C7D3CB200929334 /* CLTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		66F165411C7BAEC00046F83B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -126,6 +189,28 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		662823CF1C7D3CB200929334 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CLTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ezekielelin.CLTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		662823D01C7D3CB200929334 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CLTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ezekielelin.CLTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		66F1654A1C7BAEC00046F83B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -223,6 +308,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		662823CE1C7D3CB200929334 /* Build configuration list for PBXNativeTarget "CLTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				662823CF1C7D3CB200929334 /* Debug */,
+				662823D01C7D3CB200929334 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		66F165401C7BAEC00046F83B /* Build configuration list for PBXProject "CLCalc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -239,6 +332,7 @@
 				66F1654E1C7BAEC00046F83B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
